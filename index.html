@@ -178,6 +178,35 @@
             </div>
         </section>
 
+        <!-- Interactive Birthday Wish Section -->
+        <section class="wish-section">
+            <h2 class="wish-section-title">A Little Birthday Wish ✨</h2>
+            <p class="wish-section-subtitle">Click the card below to open it...</p>
+
+            <div class="interactive-envelope" id="wishEnvelope">
+                <!-- Closed Card state -->
+                <div class="envelope-cover" id="envelopeCover">
+                    <div class="wax-seal-btn">🌸</div>
+                    <p class="envelope-label">Open Me</p>
+                </div>
+
+                <!-- Opened Card state containing the candle -->
+                <div class="envelope-inside" id="envelopeInside">
+                    <div class="candle-wrapper" id="candleWrapper">
+                        <div class="candle-number">18</div>
+                        <div class="candle-stick"></div>
+                        <div class="candle-flame" id="candleFlame"></div>
+                    </div>
+                    <p class="candle-instruction" id="candleInstruction">Click the flame to blow it out...</p>
+                    
+                    <!-- Final hidden message fading in -->
+                    <div class="hidden-wish-message" id="hiddenWishMessage">
+                        <p class="wish-text">"Make a wish... though all mine came true when I met you. Happy 18th, Malak." 💕</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sweet Footer -->
         <footer class="card-footer">
             <p>Made with all my love for Mallak's 18th Birthday 💕</p>

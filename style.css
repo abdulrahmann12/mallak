@@ -351,6 +351,189 @@ body {
     cursor: pointer;
 }
 
+/* Interactive Birthday Wish Section */
+.wish-section {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    border-top: 1.5px dashed var(--pink-soft);
+}
+
+.wish-section-title {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.wish-section-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.interactive-envelope {
+    position: relative;
+    max-width: 440px;
+    height: 280px;
+    margin: 0 auto;
+    background: #FFF;
+    border: 1.5px solid var(--pink-soft);
+    border-radius: 16px;
+    box-shadow: var(--shadow-polaroid);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.envelope-cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFFDFD 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 10;
+}
+
+.wax-seal-btn {
+    width: 65px;
+    height: 65px;
+    background: var(--pink-soft);
+    border: 2px dashed var(--pink-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(220, 160, 180, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.envelope-cover:hover .wax-seal-btn {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.envelope-label {
+    font-family: var(--font-handwritten);
+    font-size: 1.6rem;
+    color: var(--pink-deep);
+    font-weight: 700;
+}
+
+.envelope-inside {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.interactive-envelope.opened .envelope-cover {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+    pointer-events: none;
+}
+
+.interactive-envelope.opened .envelope-inside {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Candle Styling */
+.candle-wrapper {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.candle-number {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pink-deep);
+    margin-bottom: 2px;
+}
+
+.candle-stick {
+    width: 10px;
+    height: 45px;
+    background: repeating-linear-gradient(45deg, #FFF, #FFF 4px, var(--lavender-accent) 4px, var(--lavender-accent) 8px);
+    border-radius: 4px;
+}
+
+.candle-flame {
+    position: absolute;
+    top: 25px;
+    width: 12px;
+    height: 20px;
+    background: linear-gradient(to top, #FF9800, #FFEB3B);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 10px #FF9800, 0 0 20px #FFEB3B;
+    animation: flickerAnim 0.15s infinite alternate;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@keyframes flickerAnim {
+    0% { transform: scale(1) rotate(-1deg); }
+    100% { transform: scale(1.08) rotate(1deg); }
+}
+
+.candle-flame.extinguished {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.candle-instruction {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: opacity 0.4s ease;
+}
+
+.candle-instruction.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* Hidden Surprise Message */
+.hidden-wish-message {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-top: 10px;
+    max-width: 320px;
+}
+
+.hidden-wish-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wish-text {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    color: var(--text-main);
+    line-height: 1.4;
+    font-weight: 700;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .card-wrapper {
